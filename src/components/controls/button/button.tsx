@@ -1,15 +1,11 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styles from "./button.module.scss";
 
-export interface ButtonProps {
-  type?: "button" | "submit" | "reset";
-  className?: string;
-  children?: ReactNode;
-}
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({ type, className, children }: ButtonProps) {
+export default function Button({ className, children, ...rest }: ButtonProps) {
   return (
-    <button type={type} className={`${styles.button} ${className}`}>
+    <button className={`${styles.button} ${className}`} {...rest}>
       {children}
     </button>
   );

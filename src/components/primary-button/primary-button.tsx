@@ -2,16 +2,16 @@ import React, { ReactNode } from "react";
 import styles from "./primary-button.module.scss";
 import Button from "../controls/button";
 
-export interface ActionButtonProps {
-  className?: string;
-  children?: ReactNode;
-}
+export type PrimaryButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function ActionButton({
+export default function PrimaryButton({
   className,
   children,
-}: ActionButtonProps) {
+  ...rest
+}: PrimaryButtonProps) {
   return (
-    <Button className={`${styles.button} ${className}`}>{children}</Button>
+    <Button className={`${styles.button} ${className}`} {...rest}>
+      {children}
+    </Button>
   );
 }

@@ -16,13 +16,23 @@ function Entry({ name, value }: EntryProps) {
   );
 }
 
-export default function UserListItem() {
+export interface UserListItemProps {
+  name: string;
+  city: string;
+  company: string;
+}
+
+export default function UserListItem({
+  name,
+  city,
+  company,
+}: UserListItemProps) {
   return (
     <li className={styles.container}>
       <dl className={styles.entryList}>
-        <Entry name="ФИО" value="Иван Иванов" />
-        <Entry name="город" value="Москва" />
-        <Entry name="компания" value="ООО Пример" />
+        <Entry name="ФИО" value={name} />
+        <Entry name="город" value={city} />
+        <Entry name="компания" value={company} />
       </dl>
       <Link to="/profile" className={styles.profileLink}>
         Подробнее
