@@ -8,7 +8,7 @@ import UsersPage from "./components/users/users-page";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/roox">
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<UsersPage />} />
