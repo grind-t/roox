@@ -1,7 +1,13 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "RooX",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -19,7 +25,8 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "bundle.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
 };
