@@ -1,1 +1,1 @@
-document.body.appendChild(function(){const e=document.createElement("div");return e.innerHTML=["Hello","webpack"].join(" "),e}());
+(()=>{var e;document.body.appendChild(((e=document.createElement("div")).innerHTML=["Hello","webpack"].join(" "),e))})();
