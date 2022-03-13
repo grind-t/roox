@@ -1,0 +1,41 @@
+.profileLink {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  font-size: 0.75rem;
+  line-height: 1.15;
+  color: #4b51ef;
+  text-decoration: none;
+}
+
+.entryName {
+  display: inline-block;
+  font-size: 0.6875rem;
+  color: #a3a3a3;
+  line-height: 1.15;
+
+  &::after {
+    content: ":";
+  }
+}
+
+.entryValue {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1.15;
+}
+
+.entryList {
+  & > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
+.container {
+  position: relative;
+  padding: 0.625rem;
+  background: #f3f3f3;
+  border-radius: 0.5rem;
+  line-height: 0;
+}

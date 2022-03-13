@@ -1,5 +1,32 @@
-$hello-color: red;
+.container {
+  display: flex;
+}
 
-.hello {
-  color: $hello-color;
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  width: 9.5rem;
+  min-height: 100vh;
+  padding: 2.2rem 1.25rem;
+  background: #bdbdbd;
+
+  & > * + * {
+    margin-top: 0.625rem;
+  }
+}
+
+.sidePanelHeading {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+.main {
+  flex: 1;
+  padding: 1.25rem 2rem;
+}
+
+.mainHeading {
+  margin-left: 0.125rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
 }

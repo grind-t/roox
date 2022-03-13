@@ -3,16 +3,16 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UserList from "./components/user-list";
-import UserProfile from "./components/user-profile";
+import ProfilePage from "./components/profile/profile-page";
+import UsersPage from "./components/users/users-page";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<UserList />} />
-          <Route path="profile" element={<UserProfile />} />
+          <Route index element={<UsersPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

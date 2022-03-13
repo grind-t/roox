@@ -1,0 +1,17 @@
+.container {
+  flex: 1;
+  max-width: 27.5rem;
+  margin-left: 2.25rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: 0.875rem;
+}
