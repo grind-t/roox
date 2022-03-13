@@ -2,11 +2,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.ts",
+    app: "./src/index.tsx",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "RooX",
+      template: "./src/index.html",
     }),
   ],
   module: {
