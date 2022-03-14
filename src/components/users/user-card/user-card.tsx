@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./user-list-item.module.scss";
+import styles from "./user-card.module.scss";
 
-interface EntryProps {
+interface UserCardEntryProps {
   name: string;
   value: string;
 }
 
-function Entry({ name, value }: EntryProps) {
+function UserCardEntry({ name, value }: UserCardEntryProps) {
   return (
     <div>
       <dt className={styles.entryName}>{name}</dt>
@@ -16,29 +16,24 @@ function Entry({ name, value }: EntryProps) {
   );
 }
 
-export interface UserListItemProps {
+export interface UserCardProps {
   id: number;
   name: string;
   city: string;
   company: string;
 }
 
-export default function UserListItem({
-  id,
-  name,
-  city,
-  company,
-}: UserListItemProps) {
+export default function UserCard({ id, name, city, company }: UserCardProps) {
   return (
-    <li className={styles.container}>
+    <div className={styles.container}>
       <dl className={styles.entryList}>
-        <Entry name="ФИО" value={name} />
-        <Entry name="город" value={city} />
-        <Entry name="компания" value={company} />
+        <UserCardEntry name="ФИО" value={name} />
+        <UserCardEntry name="город" value={city} />
+        <UserCardEntry name="компания" value={company} />
       </dl>
       <Link to={`/${id}`} className={styles.profileLink}>
         Подробнее
       </Link>
-    </li>
+    </div>
   );
 }
