@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useUsers } from "../../../hooks/users";
 import Loader from "../../common/loader";
 import styles from "./profile-form.module.scss";
@@ -31,101 +31,96 @@ export default function ProfileForm({
 
   if (!users) return <Loader />;
 
-  const Label = ({ children }: any) => (
-    <label className="label">{children}</label>
+  const controls = useMemo(
+    () => [
+      {
+        name: "name",
+        label: "Имя",
+        type: "text",
+        defaultValue: user.name,
+        isRequired: true,
+      },
+      {
+        name: "username",
+        label: "Никнейм",
+        type: "text",
+        defaultValue: user.username,
+        isRequired: true,
+      },
+      {
+        name: "email",
+        label: "Почта",
+        type: "email",
+        defaultValue: user.email,
+        isRequired: true,
+      },
+      {
+        name: "address.street",
+        label: "Улица",
+        type: "text",
+        defaultValue: user.address.street,
+        isRequired: true,
+      },
+      {
+        name: "address.city",
+        label: "Город",
+        type: "text",
+        defaultValue: user.address.city,
+        isRequired: true,
+      },
+      {
+        name: "address.zipcode",
+        label: "Почтовый индекс",
+        type: "text",
+        defaultValue: user.address.zipcode,
+        isRequired: true,
+      },
+      {
+        name: "phone",
+        label: "Телефон",
+        type: "tel",
+        defaultValue: user.phone,
+        isRequired: true,
+      },
+      {
+        name: "website",
+        label: "Сайт",
+        type: "text",
+        defaultValue: user.website,
+        isRequired: true,
+      },
+      {
+        name: "comment",
+        label: "Комментарий",
+        type: "textarea",
+      },
+    ],
+    [user]
   );
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <fieldset className={styles.fields}>
-        <Label>
-          Имя
-          <input
-            type="text"
-            defaultValue={user.name}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("name", { required: true })}
-          />
-        </Label>
-        <Label>
-          Никнейм
-          <input
-            type="text"
-            defaultValue={user.username}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("username", { required: true })}
-          />
-        </Label>
-        <Label>
-          Почта
-          <input
-            type="email"
-            defaultValue={user.email}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("email", { required: true })}
-          />
-        </Label>
-        <Label>
-          Улица
-          <input
-            type="text"
-            defaultValue={user.address.street}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("address.street", { required: true })}
-          />
-        </Label>
-        <Label>
-          Город
-          <input
-            type="text"
-            defaultValue={user.address.city}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("address.city", { required: true })}
-          />
-        </Label>
-        <Label>
-          Почтовый индекс
-          <input
-            type="text"
-            defaultValue={user.address.zipcode}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("address.zipcode", { required: true })}
-          />
-        </Label>
-        <Label>
-          Телефон
-          <input
-            type="tel"
-            defaultValue={user.phone}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("phone", { required: true })}
-          />
-        </Label>
-        <Label>
-          Сайт
-          <input
-            type="text"
-            defaultValue={user.website}
-            readOnly={isReadOnly}
-            className="input"
-            {...register("website", { required: true })}
-          />
-        </Label>
-        <Label>
-          Комментарий
-          <textarea
-            readOnly={isReadOnly}
-            className="textarea"
-            {...register("comment")}
-          />
-        </Label>
+        {controls.map((control) => (
+          <label key={control.name} className="label">
+            {control.label}
+            {control.type === "textarea" ? (
+              <textarea
+                readOnly={isReadOnly}
+                className="textarea"
+                {...register(control.name, { required: control.isRequired })}
+              />
+            ) : (
+              <input
+                type={control.type}
+                defaultValue={control.defaultValue}
+                readOnly={isReadOnly}
+                className="input"
+                {...register(control.name, { required: control.isRequired })}
+              />
+            )}
+          </label>
+        ))}
       </fieldset>
       <button disabled={isReadOnly} className={`submitButton ${styles.submit}`}>
         Отправить
