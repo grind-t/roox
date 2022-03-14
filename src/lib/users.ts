@@ -1,4 +1,4 @@
-import { compareStrings } from "../utils/strings";
+import { compareStrings } from "./strings";
 
 export interface User {
   name: string;
