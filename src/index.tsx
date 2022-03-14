@@ -15,7 +15,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<UsersPage />} />
-          <Route path="profile" element={<ProfilePage />} />
+          <Route path=":userId" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

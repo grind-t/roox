@@ -30,6 +30,7 @@ export default function UserList() {
       {sortedUsers.map((user: any) => (
         <UserListItem
           key={user.id}
+          id={user.id}
           name={user.name}
           city={user.address.city}
           company={user.company.name}

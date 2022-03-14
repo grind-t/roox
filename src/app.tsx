@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./app.module.scss";
 import { Outlet } from "react-router-dom";
-import PrimaryButton from "./components/primary-button";
 import { useSortBy } from "./hooks/users";
+import "./styles/controls.scss";
 
 export default function App() {
   const [sortBy, setSortBy] = useSortBy();
@@ -15,9 +15,14 @@ export default function App() {
         {sortOptions.map(
           (option, i) =>
             i !== sortBy && (
-              <PrimaryButton key={i} type="button" onClick={() => setSortBy(i)}>
+              <button
+                className="primaryButton"
+                key={i}
+                type="button"
+                onClick={() => setSortBy(i)}
+              >
                 {option}
-              </PrimaryButton>
+              </button>
             )
         )}
       </aside>

@@ -1,0 +1,57 @@
+.button {
+  width: fit-content;
+  padding: 0.3125rem 0.95rem;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.primaryButton {
+  @extend .button;
+  background: #4b51ef;
+}
+
+.submitButton {
+  @extend .button;
+  background: #52cf4f;
+
+  &:disabled {
+    background: #afafaf;
+  }
+}
+
+.input {
+  display: block;
+  width: 100%;
+  max-width: 13.25rem;
+  padding: 0.3125rem 0.625rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+
+  &:read-only {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:invalid {
+    border: 1px solid #d91313;
+  }
+}
+
+.textarea {
+  @extend .input;
+  max-width: initial;
+  min-height: 3.4375rem;
+  resize: none;
+}
+
+.label {
+  font-size: 0.5rem;
+  line-height: 0.5625rem;
+
+  & > .input {
+    margin-top: 0.125rem;
+  }
+}

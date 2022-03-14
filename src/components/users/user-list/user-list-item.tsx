@@ -17,12 +17,14 @@ function Entry({ name, value }: EntryProps) {
 }
 
 export interface UserListItemProps {
+  id: number;
   name: string;
   city: string;
   company: string;
 }
 
 export default function UserListItem({
+  id,
   name,
   city,
   company,
@@ -34,7 +36,7 @@ export default function UserListItem({
         <Entry name="город" value={city} />
         <Entry name="компания" value={company} />
       </dl>
-      <Link to="/profile" className={styles.profileLink}>
+      <Link to={`/${id}`} className={styles.profileLink}>
         Подробнее
       </Link>
     </li>
