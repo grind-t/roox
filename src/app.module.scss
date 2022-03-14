@@ -1,3 +1,6 @@
+@use "./styles/colors";
+@use "./styles/typography";
+
 .container {
   display: flex;
 }
@@ -8,7 +11,7 @@
   width: 9.5rem;
   min-height: 100vh;
   padding: 2.2rem 1.25rem;
-  background: #bdbdbd;
+  background: colors.$noghrei-silver;
 
   & > * + * {
     margin-top: 0.625rem;
@@ -16,8 +19,8 @@
 }
 
 .sidePanelHeading {
-  font-size: 0.75rem;
   font-weight: normal;
+  @include typography.text-md;
 }
 
 .main {
@@ -28,5 +31,5 @@
 .mainHeading {
   margin-left: 0.125rem;
   margin-bottom: 1rem;
-  font-size: 0.875rem;
+  @include typography.text-lg;
 }
