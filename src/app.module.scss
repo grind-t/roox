@@ -1,21 +1,14 @@
 @use "./styles/colors";
 @use "./styles/typography";
+@use "./styles/breakpoints";
 
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .sidePanel {
-  display: flex;
-  flex-direction: column;
-  width: 9.5rem;
-  min-height: 100vh;
-  padding: 2.2rem 1.25rem;
-  background: colors.$noghrei-silver;
-
-  & > * + * {
-    margin-top: 0.625rem;
-  }
+  display: none;
 }
 
 .sidePanelHeading {
@@ -32,4 +25,23 @@
   margin-left: 0.125rem;
   margin-bottom: 1rem;
   @include typography.text-lg;
+}
+
+@media screen and (min-width: breakpoints.$sm) {
+  .container {
+    justify-content: flex-start;
+  }
+
+  .sidePanel {
+    display: flex;
+    flex-direction: column;
+    width: 9.5rem;
+    min-height: 100vh;
+    padding: 2.2rem 1.25rem;
+    background: colors.$noghrei-silver;
+
+    & > * + * {
+      margin-top: 0.625rem;
+    }
+  }
 }
