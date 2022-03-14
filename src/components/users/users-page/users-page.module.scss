@@ -1,3 +1,5 @@
+@use "../../../styles/typography";
+
 .container {
   flex: 1;
   max-width: 26.25rem;
@@ -11,5 +13,5 @@
 
 .heading {
   margin-left: 0.125rem;
-  font-size: 0.875rem;
+  @include typography.text-lg;
 }

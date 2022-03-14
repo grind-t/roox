@@ -1,18 +1,21 @@
+@use "../../../styles/colors";
+@use "../../../styles/typography";
+
+$container-spacing: 0.625rem;
+
 .profileLink {
   position: absolute;
-  right: 0.625rem;
-  bottom: 0.625rem;
-  font-size: 0.75rem;
-  line-height: 1.15;
-  color: #4b51ef;
+  right: $container-spacing;
+  bottom: $container-spacing;
+  color: colors.$primary;
   text-decoration: none;
+  @include typography.text-md;
 }
 
 .entryName {
   display: inline-block;
-  font-size: 0.6875rem;
-  color: #a3a3a3;
-  line-height: 1.15;
+  color: colors.$dark-souls;
+  @include typography.text-sm;
 
   &::after {
     content: ":";
@@ -22,8 +25,7 @@
 .entryValue {
   display: inline-block;
   margin-left: 0.5rem;
-  font-size: 0.6875rem;
-  line-height: 1.15;
+  @include typography.text-sm;
 }
 
 .entryList {
@@ -34,8 +36,8 @@
 
 .container {
   position: relative;
-  padding: 0.625rem;
-  background: #f3f3f3;
+  padding: $container-spacing;
+  background: colors.$secondary;
   border-radius: 0.5rem;
   line-height: 0;
 }

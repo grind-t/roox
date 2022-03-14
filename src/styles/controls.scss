@@ -1,23 +1,26 @@
+@use "colors";
+@use "typography";
+
 .button {
   width: fit-content;
   padding: 0.3125rem 0.95rem;
   border: none;
   border-radius: 0.3125rem;
-  font-size: 0.75rem;
   color: white;
+  @include typography.text-md;
 }
 
 .primaryButton {
   @extend .button;
-  background: #4b51ef;
+  background: colors.$primary;
 }
 
 .submitButton {
   @extend .button;
-  background: #52cf4f;
+  background: colors.$success;
 
   &:disabled {
-    background: #afafaf;
+    background: colors.$smoke-screen;
   }
 }
 
@@ -26,17 +29,16 @@
   width: 100%;
   max-width: 13.25rem;
   padding: 0.3125rem 0.625rem;
-  border: 1px solid #d8d8d8;
+  border: 1px solid colors.$desired-dawn;
   border-radius: 0.25rem;
-  font-size: 0.625rem;
-  line-height: 0.75rem;
+  @include typography.text-xs;
 
   &:read-only {
-    color: rgba(0, 0, 0, 0.3);
+    color: colors.$muted;
   }
 
   &:invalid {
-    border: 1px solid #d91313;
+    border: 1px solid colors.$danger;
   }
 }
 
@@ -48,8 +50,7 @@
 }
 
 .label {
-  font-size: 0.5rem;
-  line-height: 0.5625rem;
+  @include typography.text-xxs;
 
   & > .input {
     margin-top: 0.125rem;

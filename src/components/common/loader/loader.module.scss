@@ -1,3 +1,5 @@
+@use "../../../styles/colors";
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -9,7 +11,7 @@
 
 .loader {
   margin: 0 auto;
-  border: 2px solid #f3f3f3;
+  border: 2px solid colors.$secondary;
   border-top: 2px solid gray;
   border-radius: 50%;
   width: 20px;

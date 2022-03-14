@@ -1,5 +1,26 @@
-$text-tiny: 0.5rem;
-$text-xxxs: 0.625rem;
-$text-xxs: 0.6875rem;
-$text-xs: 0.75rem;
-$text-base: 1rem;
+$line-height: 1.15;
+
+@mixin text-xxs {
+  font-size: 0.5rem;
+  line-height: $line-height;
+}
+
+@mixin text-xs {
+  font-size: 0.625rem;
+  line-height: $line-height;
+}
+
+@mixin text-sm {
+  font-size: 0.6875rem;
+  line-height: $line-height;
+}
+
+@mixin text-md {
+  font-size: 0.75rem;
+  line-height: $line-height;
+}
+
+@mixin text-lg {
+  font-size: 0.875rem;
+  line-height: $line-height;
+}

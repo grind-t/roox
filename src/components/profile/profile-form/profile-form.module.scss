@@ -1,6 +1,8 @@
+@use "../../../styles/colors";
+
 .fields {
   padding: 1.25rem 0.75rem;
-  border: 1px solid #f3f3f3;
+  border: 1px solid colors.$secondary;
   border-radius: 0.5rem;
 }
 
