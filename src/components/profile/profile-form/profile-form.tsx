@@ -31,72 +31,69 @@ export default function ProfileForm({
 
   if (!users) return <Loader />;
 
-  const controls = useMemo(
-    () => [
-      {
-        name: "name",
-        label: "Имя",
-        type: "text",
-        defaultValue: user.name,
-        isRequired: true,
-      },
-      {
-        name: "username",
-        label: "Никнейм",
-        type: "text",
-        defaultValue: user.username,
-        isRequired: true,
-      },
-      {
-        name: "email",
-        label: "Почта",
-        type: "email",
-        defaultValue: user.email,
-        isRequired: true,
-      },
-      {
-        name: "address.street",
-        label: "Улица",
-        type: "text",
-        defaultValue: user.address.street,
-        isRequired: true,
-      },
-      {
-        name: "address.city",
-        label: "Город",
-        type: "text",
-        defaultValue: user.address.city,
-        isRequired: true,
-      },
-      {
-        name: "address.zipcode",
-        label: "Почтовый индекс",
-        type: "text",
-        defaultValue: user.address.zipcode,
-        isRequired: true,
-      },
-      {
-        name: "phone",
-        label: "Телефон",
-        type: "tel",
-        defaultValue: user.phone,
-        isRequired: true,
-      },
-      {
-        name: "website",
-        label: "Сайт",
-        type: "text",
-        defaultValue: user.website,
-        isRequired: true,
-      },
-      {
-        name: "comment",
-        label: "Комментарий",
-        type: "textarea",
-      },
-    ],
-    [user]
-  );
+  const controls = [
+    {
+      name: "name",
+      label: "Имя",
+      type: "text",
+      defaultValue: user.name,
+      isRequired: true,
+    },
+    {
+      name: "username",
+      label: "Никнейм",
+      type: "text",
+      defaultValue: user.username,
+      isRequired: true,
+    },
+    {
+      name: "email",
+      label: "Почта",
+      type: "email",
+      defaultValue: user.email,
+      isRequired: true,
+    },
+    {
+      name: "address.street",
+      label: "Улица",
+      type: "text",
+      defaultValue: user.address.street,
+      isRequired: true,
+    },
+    {
+      name: "address.city",
+      label: "Город",
+      type: "text",
+      defaultValue: user.address.city,
+      isRequired: true,
+    },
+    {
+      name: "address.zipcode",
+      label: "Почтовый индекс",
+      type: "text",
+      defaultValue: user.address.zipcode,
+      isRequired: true,
+    },
+    {
+      name: "phone",
+      label: "Телефон",
+      type: "tel",
+      defaultValue: user.phone,
+      isRequired: true,
+    },
+    {
+      name: "website",
+      label: "Сайт",
+      type: "text",
+      defaultValue: user.website,
+      isRequired: true,
+    },
+    {
+      name: "comment",
+      label: "Комментарий",
+      type: "textarea",
+    },
+  ];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
